@@ -1,0 +1,93 @@
+Options +SymLinksIfOwnerMatch
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+    RewriteEngine On
+
+    # Redirect Trailing Slashes If Not A Folder...    
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+
+    #RewriteCond %{REQUEST_FILENAME} -f
+	RewriteRule ^resources/uploads/([a-zA-Z]+)/([a-zA-Z0-9]{1})/([a-zA-Z0-9]{1})/([a-zA-Z0-9]{1})/(.+)/([0-9]{1,4})/([0-9]{1,4})/([0-9]+)img([a-zA-z0-9]+\.(gif|jpg|jpeg|png))$ thumnail.php?img=resources/uploads/$1/$2$3$4/$8/img$9&width=$6&height=$7 [QSA]
+	# RewriteRule ^imgs/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=$3.$4&width=$1&height=$2 [QSA]
+	# RewriteCond %{REQUEST_URI} \.(jpg|jpeg|gif|png)$ [NC]
+	# RewriteCond %{REQUEST_FILENAME} !-f
+	# RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteRule ^img/category-icons/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png|svg)$ thumnail.php?img=resources/uploads/categories/icons/$3.$4&width=$1&height=$2&pad=1 [QSA]	
+	RewriteRule ^imgs/categories-icons/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png|svg)$ thumnail.php?img=resources/uploads/categories/icons/$3.$4&width=$1&height=$2&pad=1 [QSA]	
+	RewriteRule ^imgs/merchant/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png|svg)$ thumnail.php?img=resources/uploads/merchant/logo/$3.$4&width=$1&height=$2&pad=1 [QSA]	
+	RewriteRule ^imgs/seller/profile/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/seller/profile/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/seller/store/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/seller/store/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/payment-mode/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/payment-mode/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/favicon/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/payment-mode/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/profile-img/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/profile-imgs/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/products/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/products/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/affiliate/banners/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/affilate/store/banners/$3.$4&width=$1&height=$2 [QSA]
+	RewriteRule ^imgs/affiliate/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=resources/uploads/affilate/store/logo/$3.$4&width=$1&height=$2 [QSA]
+	
+	
+	
+	RewriteRule ^static/mobapp/(.*)$ assets/mobapp/$1
+
+    # Handle Front Controller...
+	RewriteCond %{REQUEST_FILENAME} !-d
+	RewriteCond %{REQUEST_FILENAME} !-f
+	RewriteRule ^ index.php [L]	
+	
+	# RewriteRule ^resources/uploads/([a-zA-Z]+)/([a-zA-Z0-9]{1})/([a-zA-Z0-9]{1})/([a-zA-Z0-9]{1})/(.+)/([0-9]{1,4})/([0-9]{1,4})/([0-9]+)img([a-zA-z0-9]+\.(gif|jpg|jpeg|png))$ thumnail.php?img=resources/uploads/$1/$2$3$4/$8/img$9&width=$6&height=$7 [QSA]
+	
+	
+	
+	# RewriteRule ^imgs/([0-9]{1,4})/([0-9]{1,4})/(.*)\.(gif|jpg|jpeg|png)$ thumnail.php?img=$3.$4&width=$1&height=$2 [QSA]
+	
+</IfModule>
+<ifModule mod_headers.c>
+	# Turn on Expires and set default expires to 3 days
+	ExpiresActive On
+	#ExpiresDefault A259200
+
+	 #This goes in your root .htaccess file but if you have access to httpd.conf that is better.
+	 #This code uses the FilesMatch directive and the Header directive to add Cache-Control Headers to certain files.
+
+    # 480 weeks
+	<FilesMatch "\.(ico|pdf|flv|jpg|jpeg|png|gif|js|css|swf)$">
+		Header set Cache-Control "max-age=290304000, public"
+	</FilesMatch>
+
+	# Force no caching for dynamic files
+	<filesMatch ".(php|htm)$">
+		ExpiresDefault A0
+		Header set Cache-Control "no-store, no-cache, must-revalidate, max-age=0"
+		Header set Pragma "no-cache"
+	</filesMatch>
+</ifModule>
+<IfModule mod_deflate.c>
+  # Force deflate for mangled headers
+  <IfModule mod_setenvif.c>
+    <IfModule mod_headers.c>
+      SetEnvIfNoCase ^(Accept-EncodXng|X-cept-Encoding|X{15}|~{15}|-{15})$ ^((gzip|deflate)\s*,?\s*)+|<X~->{4,13}$ HAVE_Accept-Encoding
+      RequestHeader append Accept-Encoding "gzip,deflate" env=HAVE_Accept-Encoding
+    </IfModule>
+  </IfModule>
+  # Compress all output labeled with one of the following MIME-types
+  <IfModule mod_filter.c>
+    AddOutputFilterByType DEFLATE application/atom+xml \
+                                  application/javascript \
+                                  application/json \
+                                  application/rss+xml \
+                                  application/vnd.ms-fontobject \
+                                  application/x-font-ttf \
+                                  application/xhtml+xml \
+                                  application/xml \
+                                  font/opentype \
+                                  image/svg+xml \
+                                  image/x-icon \
+                                  text/css \
+                                  text/html \
+                                  text/plain \
+                                  text/x-component \
+                                  text/xml
+  </IfModule>
+</IfModule>

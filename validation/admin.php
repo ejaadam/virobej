@@ -1,0 +1,64 @@
+<?php
+
+return [
+	'admin'=>[
+        'login'=>[
+            'ATTRIBUTES'=>[
+                'username'=>[
+                    'type'=>'text'
+                ],
+                'password'=>[
+                    'type'=>'password'
+                ]
+            ],
+            'LABELS'=>[
+                'username'=>Lang::get('general.fields.username'),
+                'password'=>Lang::get('general.fields.password')
+            ],
+            'RULES'=>['username'=>'required|min:3|max:100', 'password'=>'required|min:6|max:10']
+        ],
+		'forgot-password'=>[
+			'ATTRIBUTES'=>[
+				'password'=>[
+					'type'=>'password'
+				]
+			],
+			'LABELS'=>[
+				'username'=>Lang::get('general.fields.username'),
+				'verification_code'=>Lang::get('general.fields.verification_code'),
+				'password'=>Lang::get('general.fields.password'),
+			],
+			'RULES'=>[
+				'username'=>'required',
+				'verification_code'=>'required|digits:6',
+				'password'=>'required|min:6|max:10'
+			]
+		],
+		'forgot-password'=>[
+			'ATTRIBUTES'=>[
+				'password'=>[
+					'type'=>'password'
+				]
+			],
+			'LABELS'=>[
+				'username'=>Lang::get('general.fields.username'),
+				'verification_code'=>Lang::get('general.fields.verification_code'),
+				'password'=>Lang::get('general.fields.password'),
+			],
+			'RULES'=>[
+				'username'=>'required',
+				'verification_code'=>'required|digits:6',
+				'password'=>'required|min:6|max:10'
+			]
+		],
+		'preferences'=>[
+			'save'=>[
+				'RULES'=>[
+					'preferences.is_ownshipment'=>'required',					
+				]
+			],
+		],
+	],
+	
+	
+];

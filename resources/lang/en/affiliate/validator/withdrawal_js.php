@@ -1,0 +1,31 @@
+<?php
+return [
+"bank_name_valid" => "Please enter the bank Name",
+"routing_number_valid" => "Please enter the Routing Number",
+"swift_code_enter_valid" => "Please Enter Swift Code",
+'valid_swift_code' => 'Please Enter Valid Swift Code',
+"enter_account_number" => "Please Enter Account Number",
+"valid_account_number" => "Please Enter Valid Account Number",
+"state_city" => "Please enter Your State Or City",
+"enter_bank_name" => "Please enter Bank name",
+"enter_ifsc_code" => "Please Enter IFSC Code",
+"valid_ifsc_code" => "Please Enter Valid IFSC Code",
+"enter_branch" => "Please Enter Branch",
+"enter_valid_pan_id" => 'Please Enter Valid PAN ID',
+"enter_bank_code" => "Please Enter Bank Code",
+"enter_branch_code" => "Please Enter Branch Code",
+"enter_withdraw_amount" =>"Please Enter withdraw amount",
+"min_withdrawal_txt"=>"You cannot withdraw less than the minimum withdrawal amount",
+"max_withdrawal_txt"=>"You cannot withdraw less than the maximum withdrawal amount",
+'avali_amt_valid'=>"You cannot withdraw more than the available balance",
+'min_amount_txt' => 'Min amount',
+'max_amount_txt' => 'Max amount',
+'avail_bala_in_wallet' => 'Available Balance In Your Wallet',
+'enter_ko-kard_account_number' =>'Enter Ko-Kard account number',
+'numbers_only' => 'Enter numbers only',
+'invalid_ko-kard_account_number' => 'Invalid Ko-Kard account number',
+'enter_paypal_account_email' => 'Enter PayPal account email',
+'invalid_email' => 'Invalid Email',
+'enter_bitcoin_address' => 'Enter Bitcoin address'
+
+];

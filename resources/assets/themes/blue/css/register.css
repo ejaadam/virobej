@@ -1,0 +1,86 @@
+@charset "UTF-8";
+/* CSS Document */
+
+		body { background:#fff; font-family:"Lato", sans-serif; font-weight:300 }
+		p { font-weight:400 }
+	
+		.header {
+			text-align: center;
+			background:#333;
+			color:#fff;
+			padding:20px 0;	
+		}
+		
+		.header img {
+			width:10%;
+			vertical-align:middle;
+		}		
+		
+		.header h1 {
+			font-size:2rem; font-weight:100; letter-spacing:2px; color:#FC0
+		}
+		
+		.spacer { height:1rem }
+		
+		.signup { background:#eee; padding-top:1rem }
+		
+		.learnmore { margin-bottom:1rem }
+		.learnmore a { font-weight:1.25rem; font-weight:900 }		
+		.learnmore .fa { display:block }
+		
+		#email_alert { color:#CC3300; display:none }
+		
+		.panel { background:#FC0 }
+		.panel h2 { font-weight:900 }
+		
+		footer { padding-top:2rem }
+		footer .disclaimers { line-height:.75em }		
+
+		@media (min-width:801px) and (max-width:1279px) {
+		.register_woman { width:75% }
+		}
+
+		@media (min-width:360px) and (max-width:800px) {
+			
+		.header {
+			text-align: left;
+			background:#333;
+			color:#fff;
+			padding:20px;	
+		}
+		
+		.header .flag { display:none }		
+		
+		.header h1 { font-size:1.5rem; font-weight:100; letter-spacing:2px; color:#FC0 }			
+		.header h1 img {  }			
+		
+
+		}
+		
+		@media (min-width:360px) and (max-width:480px) {		
+		.header img {
+			width:20%;
+			vertical-align:middle;
+		}	
+		.panel h2 {
+		font-size:1.25rem;	
+		}
+		.panel h4 {
+		font-size:1rem;
+		line-height:1.25rem;	
+		}	
+		.panel p {
+		line-height:1.25rem!important;
+		font-weight:400			
+		}
+		.register_woman { width:50% }
+		}
+span.errmsg {
+    background-color: #dd4b39;
+    color: #fff;
+    font-weight: bolder;
+    font-size: 11px;
+    line-height: 11px;
+    padding: 4px 10px;
+    border-radius: 0 0 3px 3px;
+}

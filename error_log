@@ -1,0 +1,7 @@
+[14-Nov-2018 13:01:46 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Query\JoinClause::groupby() in /home/virob/public_html/staging/app/Models/Api/User/WalletModel.php on line 246
+[14-Nov-2018 13:01:51 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Query\JoinClause::groupby() in /home/virob/public_html/staging/app/Models/Api/User/WalletModel.php on line 246
+[14-Nov-2018 13:01:52 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Query\JoinClause::groupby() in /home/virob/public_html/staging/app/Models/Api/User/WalletModel.php on line 246
+[14-Nov-2018 13:01:53 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Query\JoinClause::groupby() in /home/virob/public_html/staging/app/Models/Api/User/WalletModel.php on line 246
+[14-Nov-2018 13:03:12 UTC] PHP Fatal error:  Call to undefined method Illuminate\Database\Query\JoinClause::groupby() in /home/virob/public_html/staging/app/Models/Api/User/WalletModel.php on line 246
+[22-Nov-2018 07:42:01 UTC] PHP Fatal error:  Class 'App\Models\Api\User\AccountModel' not found in /home/virob/public_html/staging/app/Http/Controllers/Api/User/UserApiBaseController.php on line 44
+[22-Nov-2018 07:42:08 UTC] PHP Fatal error:  Class 'App\Models\Api\User\AccountModel' not found in /home/virob/public_html/staging/app/Http/Controllers/Api/User/UserApiBaseController.php on line 44

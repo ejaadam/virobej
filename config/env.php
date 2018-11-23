@@ -1,0 +1,27 @@
+<?php
+
+return [
+    'APP_ENV'=>'local',
+    'APP_DEBUG'=>true,
+    'APP_KEY'=>'base64:YikhACVrgVTYY1iQ75y6ZXLukSgH2RbTtrc84a5KcTk=',
+    'APP_URL'=>'http://localhost/dsvb_portal',
+    'KEY_PATH'=>'/secure/secure.php',
+    'DB_CONNECTION'=>'mysql',
+    'DB_PORT'=>'3306',
+    'DB_HOST'=>'localhost',
+    'DB_DATABASE'=>'dsp_portal',
+    'DB_USERNAME'=>'root',
+    'DB_PASSWORD'=>'',
+    'CACHE_DRIVER'=>'file',
+    'SESSION_DRIVER'=>'file',
+    'QUEUE_DRIVER'=>'sync',
+    'REDIS_HOST'=>'127.0.0.1',
+    'REDIS_PASSWORD'=>'null',
+    'REDIS_PORT'=>'6379',
+    'MAIL_DRIVER'=>'smtp',
+    'MAIL_HOST'=>'mail.xpayback.com',
+    'MAIL_PORT'=>'25',
+    'MAIL_USERNAME'=>'noreplay@xpayback.com',
+    'MAIL_PASSWORD'=>'ejugiter@123',
+    'MAIL_ENCRYPTION'=>'tls',
+];

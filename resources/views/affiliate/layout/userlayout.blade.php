@@ -1,0 +1,1 @@
+ <link rel="stylesheet" href="{{asset('resources/assets/themes/affiliate/plugins/iCheck/square/blue.css')}}">
